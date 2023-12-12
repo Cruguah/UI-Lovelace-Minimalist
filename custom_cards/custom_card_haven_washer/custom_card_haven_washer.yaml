@@ -573,7 +573,7 @@ custom_card_haven_washer:
                     [[[
                       if (!!variables.ulm_custom_card_washer_delayed_starttime
                         && !!states[variables.ulm_custom_card_washer_delayed_starttime]?.attributes) {
-                        var timestamp = states[variables.ulm_custom_card_washer_delayed_starttime].attributes.timestamp
+                        var timestamp = states[variables.ulm_custom_card_washer_delayed_starttime].attributes.timestamp;
 
                         let unix_timestamp = timestamp - 4500;
                         // Create a new JavaScript Date object based on the timestamp
@@ -605,7 +605,7 @@ custom_card_haven_washer:
                     [[[
                       if (!!variables.ulm_custom_card_washer_delayed_starttime
                         && !!states[variables.ulm_custom_card_washer_delayed_starttime]?.attributes) {
-                        var timestamp = states[variables.ulm_custom_card_washer_delayed_starttime].attributes.timestamp
+                        var timestamp = states[variables.ulm_custom_card_washer_delayed_starttime].attributes.timestamp;
 
                         let unix_timestamp = timestamp - 3540;
                         // Create a new JavaScript Date object based on the timestamp
@@ -627,12 +627,12 @@ custom_card_haven_washer:
                 action: "call-service"
                 service: "input_datetime.set_datetime"
                 service_data:
-                  entity_id: "[[[ variables.ulm_custom_card_washer_delayed_starttime ]]]"
+                  entity_id: "[[[ return variables.ulm_custom_card_washer_delayed_starttime; ]]]"
                   time: >
                     [[[
                       if (!!variables.ulm_custom_card_washer_delayed_starttime
                         && !!states[variables.ulm_custom_card_washer_delayed_starttime]?.attributes) {
-                        var timestamp = states[variables.ulm_custom_card_washer_delayed_starttime].attributes.timestamp
+                        var timestamp = states[variables.ulm_custom_card_washer_delayed_starttime].attributes.timestamp;
 
                         let unix_timestamp = timestamp - 3660;
                         // Create a new JavaScript Date object based on the timestamp
@@ -712,7 +712,7 @@ custom_card_haven_washer_delayed_text:
   show_icon: false
   show_label: true
   show_name: false
-  label: "[[[ return variables.ulm_translation_state_unit ]]]"
+  label: "[[[ return variables.ulm_translation_state ]]]"
   styles:
     state:
       - color: "rgba(var(--color-theme),0.9)"
